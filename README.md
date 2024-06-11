@@ -2,7 +2,7 @@
 
 Atividade Assíncronade Estruturas de Dados II-Hashing
 
-Questão única: Crie um programa para implementar em arquivo o cadastro de produtos de uma loja. Cada registro do  arquivo  de produtos deve  armazenar  os  seguintes  dados: código(chave  primária), descrição, preço e quantidade  em  estoque. O  acesso  aos  registros  do  arquivo  será  feito  através de  uma  tabela  de  hashing que  será implementada  utilizando-se  um  arquivo  seqüencial  cujos  registros  terão  os  seguintes campos: código do produto, posição do produto com aquele código no arquivo de produtos, o statusdo registro (0 –livre, 1 –em uso) e  um campo próximoque será utilizado para implementar o encadeamento interno. O programa deverá ter as seguintes funcionalidades:
+Questão única: Crie um programa para implementar em arquivo o cadastro de produtos de uma loja. Cada registro do  arquivo  de produtos deve  armazenar  os  seguintes  dados: código(chave  primária), descrição, preço e quantidade  em  estoque. O  acesso  aos  registros  do  arquivo  será  feito  através de  uma  tabela  de  hashing que  será implementada  utilizando-se  um  arquivo  seqüencial  cujos  registros  terão  os  seguintes campos: código do produto, posição do produto com aquele código no arquivo de produtos, o status do registro (0 –livre, 1 –em uso) e  um campo próximo que será utilizado para implementar o encadeamento interno. O programa deverá ter as seguintes funcionalidades:
 
 (1)Função de hashing. Recebe como parâmetro de entrada o código do produto. O algoritmo de hashing a ser utilizado é o “método da permutação para chaves alfanuméricas”. A função irá retornar o valor calculado.
 
