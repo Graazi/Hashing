@@ -14,7 +14,7 @@ typedef struct {
     int quantidade;
 } Produto;
 
-// Estrutura para os registros da tabela de hashing
+// Registros da tabela de hashing
 typedef struct {
     int codigo_produto;
     int posicao_arquivo;
@@ -22,12 +22,12 @@ typedef struct {
     int proximo; // Encadeamento interno
 } RegistroHash;
 
-// Função de hashing simples
+// Hashing simples
 int hashFunction(int codigo) {
     return codigo % TABLE_SIZE;
 }
 
-// Função para buscar um registro na tabela de hashing pelo código do produto
+// Buscar um registro na tabela de hashing
 RegistroHash buscarRegistro(RegistroHash tabela_hash[], int codigo) {
     int indice = hashFunction(codigo);
     while (tabela_hash[indice].status != 0 && tabela_hash[indice].codigo_produto != codigo && tabela_hash[indice].proximo != -1) {
@@ -36,7 +36,7 @@ RegistroHash buscarRegistro(RegistroHash tabela_hash[], int codigo) {
     return tabela_hash[indice];
 }
 
-// Função para cadastrar um novo produto
+// Cadastrar um novo produto
 void cadastrarProduto(Produto produtos[], RegistroHash tabela_hash[]) {
     Produto novo_produto;
     RegistroHash novo_registro;
@@ -66,7 +66,7 @@ void cadastrarProduto(Produto produtos[], RegistroHash tabela_hash[]) {
     printf("Produto cadastrado com sucesso.\n");
 }
 
-// Função para exibir os dados de um produto
+// Exibir os dados de um produto
 void exibirProduto(Produto produto) {
     printf("Código: %d\n", produto.codigo);
     printf("Descrição: %s\n", produto.descricao);
@@ -74,7 +74,7 @@ void exibirProduto(Produto produto) {
     printf("Quantidade em estoque: %d\n", produto.quantidade);
 }
 
-// Função para alterar os dados de um produto
+// Alterar os dados de um produto
 void alterarProduto(Produto produtos[], int indice) {
     printf("Digite a nova descrição do produto: ");
     scanf(" %[^\n]", produtos[indice].descricao);
@@ -86,7 +86,7 @@ void alterarProduto(Produto produtos[], int indice) {
     printf("Produto alterado com sucesso.\n");
 }
 
-// Procedimento para listar todos os produtos
+// Listar todos os produtos
 void listarProdutos(Produto produtos[], int tamanho) {
     for (int i = 0; i < tamanho; i++) {
         if (produtos[i].codigo != 0) {
@@ -100,7 +100,7 @@ int main() {
     Produto produtos[MAX_PRODUTOS];
     RegistroHash tabela_hash[TABLE_SIZE];
     
-    // Inicializa a tabela de hash
+    // Inicializar a tabela
     for (int i = 0; i < TABLE_SIZE; i++) {
         tabela_hash[i].codigo_produto = 0;
         tabela_hash[i].posicao_arquivo = -1;
